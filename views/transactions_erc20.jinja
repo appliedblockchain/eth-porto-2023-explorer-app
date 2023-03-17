@@ -1,0 +1,31 @@
+{% extends "layout.jinja" %}
+
+{% block content %}
+<a class="button btn-back is-info" href="/">&larr; Back</a>
+
+<h1 class="title">Block {{block_num}} - ERC20 transfers</h1>
+
+{% for transaction in transactions %}
+{% set explorer_url = transaction["explorer_url"] %}
+<div class="card">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-content">
+        <p class="title is-4">{{ transaction["address_from"] }} ⮕ {{ transaction["erc20_transfer_value"] }} {{ transaction["erc20_ticker_symbol"] }} ⮕ {{ transaction["erc20_transfer_address_to"] }}</p>
+      </div>
+    </div>
+
+    <div class="content">
+      <p>Transaction ID: <span>{{ transaction["tx_id"] }}</span></p>
+      <p class="explorer_url"><a href="{{ explorer_url }}">{{ explorer_url }}</a></p>
+    </div>
+  </div>
+</div>
+<div style="height: 40px"></div>
+{% endfor %}
+{# if transactions len is 0 then print <p> no matching transactions found in this block </p> #}
+{% if transactions|length == 0 %}
+<p>No matching transactions found in this block</p>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "layout.jinja" %}
+
+{% block content %}
+<h1 class="title">Explore NFTs</h1>
+
+<div class="card">
+  <div class="card-content">
+    <div class="content">
+      <form action="/transactions/nft" method="get">
+        <div class="field">
+          <label class="label" for="block_num">Block Number:</label>
+          <div class="control">
+            <input class="input" name="block_num" type="number" id="block_num" placeholder="12345" required>
+          </div>
+        </div>
+        <p class="is-small">e.g. 15472277, 14717636</p>
+        <div style="height: 20px"></div>
+
+        <div class="field">
+          <div class="control">
+            <button class="button is-info" type="submit">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

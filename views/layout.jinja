@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Eth Explorer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+  <style type="text/css">
+    .section {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    .explorer_url {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .btn-back {
+      position: relative;
+      top: -4.8rem;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero is-info is-small">
+    <div class="container">
+      <div class="hero-body">
+        <a href="/">
+          <h1 class="title">Eth Explorer</h1>
+        </a>
+      </div>
+    </div>
+  </section>
+  <nav class="section buttons-container">
+    <div class="container">
+      <div class="buttons is-centered">
+        <a href="/" class="navbar-item button is-info is-medium">NFT</a>
+        <a href="/erc20s" class="navbar-item button is-info is-medium">ERC20</a>
+      </div>
+    </div>
+  </nav>
+  <section class="section">
+    <div class="container">
+      {% block content %}{% endblock %}
+    </div>
+  </section>
+  <div style="height: 140px"></div>
+</body>
+</html>
